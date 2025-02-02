@@ -2,6 +2,11 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""
+O método de Lucas-Kanade assume que o fluxo óptico é aproximadamente constante em uma pequena vizinhança de cada pixel. 
+A ideia é resolver o sistema de equações linear gerado pela restrição de constância de intensidade.
+"""
+
 # Carrega duas imagens consecutivas em escala de cinza
 img1 = cv2.imread('/home/vicrrs/projetos/meus_projetos/VideoSyncNet/imgs/sj001.jpg', cv2.IMREAD_GRAYSCALE)
 img2 = cv2.imread('/home/vicrrs/projetos/meus_projetos/VideoSyncNet/imgs/sj002.jpg', cv2.IMREAD_GRAYSCALE)
