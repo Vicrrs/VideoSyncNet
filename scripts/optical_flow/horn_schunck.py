@@ -2,6 +2,11 @@ import cv2
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""
+O método de Horn-Schunck propõe uma abordagem global para o fluxo óptico, impondo uma suavidade sobre o campo de fluxo. 
+A função de energia a ser minimizada é composta por um termo de fidelidade aos dados e um termo de suavidade.
+"""
+
 # Carrega duas imagens consecutivas em escala de cinza
 img1 = cv2.imread('/home/vicrrs/projetos/meus_projetos/VideoSyncNet/imgs/sj001.jpg', cv2.IMREAD_GRAYSCALE)
 img2 = cv2.imread('/home/vicrrs/projetos/meus_projetos/VideoSyncNet/imgs/sj002.jpg', cv2.IMREAD_GRAYSCALE)
