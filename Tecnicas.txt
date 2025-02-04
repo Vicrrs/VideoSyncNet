@@ -1,0 +1,64 @@
+1. Pré-processamento e Normalização
+2. Extração e Representação de Características
+3. Alinhamento Espacial e Temporal
+4. Refinamento e Aprimoramento da Qualidade
+-----------------
+
+1. Pré-processamento e Normalização
+
+    1.1. Normalização e Ajuste de Intensidade
+        - Normalização de intensidade: Ajusta a escala dos valores dos pixels para garantir consistência no treinamento da rede.
+
+    1.2. Remoção de Ruído
+        - Filtro Gaussiano (Gaussian Blur): Suaviza a imagem e reduz ruídos de alta frequência sem perder bordas.
+        - Filtro Bilateral (Bilateral Filtering): Remove ruído preservando bordas e detalhes importantes.
+        - Filtro de Mediana: Remove ruído impulsivo como "sal e pimenta" sem distorcer as bordas.
+        - Redução de artefatos por aprendizado profundo: Aplicação de redes neurais para remover ruídos em vídeos.
+
+    1.3. Equalização e Aprimoramento do Contraste
+        - Equalização de Histograma: Distribui melhor os níveis de intensidade para realçar contrastes.
+        - CLAHE (Contrast Limited Adaptive Histogram Equalization)**: Variante da equalização de histograma que limita a amplificação de ruídos.
+
+    1.4. Transformações Geométricas para Normalização
+        - Correção de perspectiva: Alinha diferentes pontos de vista para uniformizar a entrada do modelo.
+        - Transformações geométricas espaciais: Normaliza variações de escala, rotação e posição antes da entrada da rede.
+
+
+2. Extração e Representação de Características
+
+    2.1. Fluxo Óptico (Optical Flow)
+        - RAFT (Recurrent All-Pairs Field Transforms): Estima fluxo óptico com alta precisão usando transformações de campo recursivo.
+        - FlowNet 2.0: Evolução do FlowNet, melhora a captura de movimento entre quadros.
+        - Correlação 4D: Técnica avançada para melhorar a correspondência de pixels entre frames.
+        - Warping Dinâmico: Ajusta a geometria do fluxo óptico para alinhar melhor os quadros.
+
+    2.2. Mapeamento de Características Locais e Globais
+        - CNNs para extração de texturas dinâmicas: Redes convolucionais treinadas para detectar padrões de textura dependentes do tempo.
+        - Redes Siamesas para correspondência de imagens: Melhoram a identificação de similaridades em vídeos estéreo.
+        - Feature Embeddings Geometricamente Invariantes: Representações robustas que não se alteram com mudanças na pose ou iluminação.
+
+    2.3. Detecção de Bordas e Segmentação
+        - Transformações geométricas espaciais: Modelagem explícita de variações de escala, rotação e perspectiva.
+        - Laplaciano de Matting: Método baseado em grafos para segmentação precisa de objetos.
+        - Segmentação Baseada em Gradiente: Extração de bordas e contornos por meio da análise de variações na intensidade.
+        - Histograma de Gradientes (HOG3D): Técnica baseada em gradientes espaciais para detectar padrões tridimensionais.
+
+
+3. Alinhamento Espacial e Temporal
+
+    3.1. Registro e Alinhamento de Vídeos Multi-Câmera
+        - Geometria Epipolar: Uso de matrizes fundamentais para alinhar vídeos de diferentes câmeras.
+        - Alinhamento Baseado em Trajetórias: Estimação do alinhamento temporal com base nas trajetórias de objetos em movimento.
+        - Warping Espacial e Temporal: Ajuste dinâmico de quadros usando fluxo óptico para garantir continuidade entre frames.
+        - Registro de Fundo Não Sobreposto: Alinhamento de vídeos capturados de diferentes pontos sem sobreposição direta.
+
+    3.2. Sincronização Baseada em Aprendizado Profundo
+        - STAN (Spatial-Temporal Alignment Network): Modelo leve que aprende transformações geométricas e temporais para reconhecimento de ações.
+        - Sincronização Multi-Vídeo com Redes Siamesas: Usa embeddings de redes siamesas para alinhar vídeos com diferentes taxas de captura.
+        - Ajuste Iterativo de Alinhamento: Algoritmo que refina simultaneamente os parâmetros espaciais e temporais de múltiplas câmeras.
+
+    3.3. Transformações Geométricas e Temporais
+        - Transformações Afins para Alinhamento: Aprendizado de transformações 4x4 para corrigir mudanças na perspectiva e posição.
+        - Correção de Perspectiva com Redes Neurais: Uso de deep learning para alinhar objetos deslocados espacialmente.
+        - Warping Temporal de Frame para Frame: Ajuste de quadros ao longo do tempo para garantir continuidade na sequência.
+
