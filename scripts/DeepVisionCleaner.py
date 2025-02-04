@@ -3,6 +3,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 class ImagePreprocessor:
+    """
+    Funcionalidades do código:
+
+        Normalização de intensidade
+        Remoção de ruído (Gaussian Blur, Bilateral Filtering, Filtro de Mediana)
+        Equalização de histograma (CLAHE)
+        Transformações geométricas (correção de perspectiva e alinhamento espacial)
+    """
     def __init__(self, apply_gaussian=True, apply_bilateral=True, apply_median=True, 
                  apply_clahe=True, apply_perspective_correction=True):
         self.apply_gaussian = apply_gaussian
