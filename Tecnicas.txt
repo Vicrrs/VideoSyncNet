@@ -1,0 +1,20 @@
+1. Pré-processamento e Normalização
+
+
+    1. Normalização e Ajuste de Intensidade
+        - Normalização de intensidade: Ajusta a escala dos valores dos pixels para garantir consistência no treinamento da rede.
+
+    2. Remoção de Ruído
+        - Filtro Gaussiano (Gaussian Blur): Suaviza a imagem e reduz ruídos de alta frequência sem perder bordas.
+        - Filtro Bilateral (Bilateral Filtering): Remove ruído preservando bordas e detalhes importantes.
+        - Filtro de Mediana: Remove ruído impulsivo como "sal e pimenta" sem distorcer as bordas.
+        - Redução de artefatos por aprendizado profundo: Aplicação de redes neurais para remover ruídos em vídeos.
+
+    3. Equalização e Aprimoramento do Contraste
+        - Equalização de Histograma: Distribui melhor os níveis de intensidade para realçar contrastes.
+        - CLAHE (Contrast Limited Adaptive Histogram Equalization)**: Variante da equalização de histograma que limita a amplificação de ruídos.
+
+    4. Transformações Geométricas para Normalização
+        - Correção de perspectiva: Alinha diferentes pontos de vista para uniformizar a entrada do modelo.
+        - Transformações geométricas espaciais: Normaliza variações de escala, rotação e posição antes da entrada da rede.
+
