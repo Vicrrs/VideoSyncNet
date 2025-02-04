@@ -2,6 +2,10 @@
 2. Extração e Representação de Características
 3. Alinhamento Espacial e Temporal
 4. Refinamento e Aprimoramento da Qualidade
+
+# ffmpeg -framerate 20 -i output_frames/frame_%05d.png output_alinhado.mp4
+
+
 -----------------
 
 1. Pré-processamento e Normalização
